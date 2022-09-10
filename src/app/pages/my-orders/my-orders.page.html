@@ -1,0 +1,58 @@
+<ion-header class="ion-no-border" mode="md">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title style="padding: 0px;">My Orders</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-segment value="new" (ionChange)="segmentChanged($event)" mode="md">
+        <ion-segment-button value="new">
+            <ion-label>New Orders</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="old">
+            <ion-label>Old Orders</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+
+    <div class="main_content_div">
+
+        <div *ngIf="tabID == 'new'">
+            <div class="item_div" *ngFor="let item of [1,2,3]" (click)="goToOrderDetail('new')">
+                <div class="flex_div">
+                    <div class="light_div">
+                        <img src="assets/imgs/pills.png">
+                    </div>
+                    <div class="tab_detail">
+                        <ion-label class="bold_lbl">Crocin Pain Relief</ion-label>
+                        <ion-label class="grey_lbl">15 tablets in stripe</ion-label>
+                    </div>
+                    <ion-label class="price">₹ 60.00</ion-label>
+                </div>
+                <ion-label class="remove_lbl">Remove</ion-label>
+            </div>
+        </div>
+
+        <div *ngIf="tabID == 'old'">
+            <div class="item_div" *ngFor="let item of [1,2,3]" (click)="goToOrderDetail('old')">
+                <div class="flex_div">
+                    <div class="light_div">
+                        <img src="assets/imgs/pills.png">
+                    </div>
+                    <div class="tab_detail">
+                        <ion-label class="bold_lbl">Crocin Pain Relief</ion-label>
+                        <ion-label class="grey_lbl">15 tablets in stripe</ion-label>
+                    </div>
+                    <ion-label class="price">₹ 60.00</ion-label>
+                </div>
+                <ion-label class="remove_lbl">Remove</ion-label>
+            </div>
+        </div>
+
+        
+
+    </div>
+
+</ion-content>

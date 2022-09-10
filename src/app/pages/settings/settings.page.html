@@ -1,0 +1,52 @@
+<ion-header class="ion-no-border" mode="md">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title style="padding: 0px;">Profile</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="main_content_div">
+          <div class="user_back">
+              <div class="img_back" [style.backgroundImage]="'url(assets/imgs/user1.jpg)'"></div>
+          </div>
+
+          <div class="detail_div">
+              <div class="light_box">
+                  <ion-icon name="person"></ion-icon>
+              </div>
+              <ion-input type="text" placeholder="name" [(ngModel)]="name" [disabled]="changeName == false" ></ion-input>
+              <ion-label class="abs_lbl" *ngIf="changeName == false" (click)="changeName = true">edit</ion-label>
+              <ion-label class="change_lbl" *ngIf="changeName == true" (click)="changeName = false">Change</ion-label>
+          </div>
+
+          <div class="detail_div">
+              <div class="light_box">
+                  <ion-icon name="mail"></ion-icon>
+              </div>
+              <ion-input type="text" placeholder="Email ID" [(ngModel)]="email" [disabled]="changeEmail == false"></ion-input>
+              <ion-label class="abs_lbl" *ngIf="changeEmail == false" (click)="changeEmail = true">edit</ion-label>
+              <ion-label class="change_lbl" *ngIf="changeEmail == true" (click)="changeEmail = false">Change</ion-label>
+          </div>
+
+          <div class="detail_div">
+              <div class="light_box">
+                  <ion-icon name="call"></ion-icon>
+              </div>
+              <ion-input type="text" placeholder="Phone No" [(ngModel)]="phone" [disabled]="changePhone == false"></ion-input>
+              <ion-label class="abs_lbl" *ngIf="changePhone == false" (click)="changePhone = true">edit</ion-label>
+              <ion-label class="change_lbl" *ngIf="changePhone == true" (click)="changePhone = false">Change</ion-label>
+          </div>
+
+          <ion-label class="bold_lbl">Settings</ion-label>
+
+          <div class="detail_div" (click)="goToDocList()">
+              <div class="light_box">
+                    <ion-icon name="document-text"></ion-icon>
+              </div>
+              <ion-label class="simp_lbl">Manage Documents</ion-label>
+          </div>
+    </div>
+</ion-content>
